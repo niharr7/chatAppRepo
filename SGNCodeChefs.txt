@@ -28,11 +28,11 @@ CREATE SCHEMA AUTHORIZATION system
                   );
  
   /* Sequence creation for user id's */
-        CREATE SEQUENCE user_Identification 
+        CREATE SEQUENCE  user_id
                  START WITH 100
                  INCREMENT BY 1;
  /* Sequence creation for search id's */
-        CREATE SEQUENCE user_search 
+        CREATE SEQUENCE search_id 
                  START WITH 100
                  INCREMENT BY 1;
  /* Sequence creation for scheduler */
@@ -46,30 +46,33 @@ CREATE SCHEMA AUTHORIZATION system
               /*  DROP TABLE user_scheduler; */
               /*   DROP SEQUENCE user_scheduler; */
       /* Inserting data into user identification table */        
-        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Abhishek_admin','Admin@12345','ADMIN');
-        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Nihar_admin','Admin@12345','ADMIN');
-        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Dnyaneshwar_admin','Admin@12345','ADMIN');
-        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Rohan_admin','Admin@12345','ADMIN');
-        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Sagar_admin','Admin@12345','ADMIN');
-        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Abhishek_user','User@12345','User');
-        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Nihar_user','User@12345','USER');
-        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Dnyaneshwar_user','User@12345','USER');
-        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Rohan_user','User@12345','USER');
-        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Sagar_user','User@12345','USER');        
+        INSERT INTO user_Identification VALUES (user_id.NEXTVAL,'Abhishek_admin','Admin@12345','ADMIN');
+        INSERT INTO user_Identification VALUES (user_id.NEXTVAL,'Nihar_admin','Admin@12345','ADMIN');
+        INSERT INTO user_Identification VALUES (user_id.NEXTVAL,'Dnyaneshwar_admin','Admin@12345','ADMIN');
+        INSERT INTO user_Identification VALUES (user_id.NEXTVAL,'Rohan_admin','Admin@12345','ADMIN');
+        INSERT INTO user_Identification VALUES (user_id.NEXTVAL,'Sagar_admin','Admin@12345','ADMIN');
+        INSERT INTO user_Identification VALUES (user_id.NEXTVAL,'Abhishek_user','User@12345','USER');
+        INSERT INTO user_Identification VALUES (user_id.NEXTVAL,'Nihar_user','User@12345','USER');
+        INSERT INTO user_Identification VALUES (user_id.NEXTVAL,'Dnyaneshwar_user','User@12345','USER');
+        INSERT INTO user_Identification VALUES (user_id.NEXTVAL,'Rohan_user','User@12345','USER');
+        INSERT INTO user_Identification VALUES (user_id.NEXTVAL,'Sagar_user','User@12345','USER');        
         
         /* Inserting data into user search table */   
         
-        INSERT INTO user_search VALUES (user_search.NEXTVAL,'NAV','TEST DATA','TEST DATA','https://www.google.co.in/');
-        INSERT INTO user_search VALUES (user_search.NEXTVAL,'FACTOR','TEST DATA','TEST DATA','https://www.google.co.in/');
-        INSERT INTO user_search VALUES (user_search.NEXTVAL,'SETTLEMENT DATE','TEST DATA','TEST DATA','https://www.google.co.in/');
-        INSERT INTO user_search VALUES (user_search.NEXTVAL,'WAM','TEST DATA','TEST DATA','https://www.google.co.in/');
-        INSERT INTO user_search VALUES (user_search.NEXTVAL,'WAL','TEST DATA','TEST DATA','https://www.google.co.in/');
-        INSERT INTO user_search VALUES (user_search.NEXTVAL,'ASSET','TEST DATA','TEST DATA','https://www.google.co.in/');
-        INSERT INTO user_search VALUES (user_search.NEXTVAL,'YIELD','TEST DATA','TEST DATA','https://www.google.co.in/');
+        INSERT INTO user_search VALUES (search_id.NEXTVAL,'NAV','TEST DATA','Net asset value (NAV) is a mutual funds price per share or exchange-traded funds (ETF) per-share value. In both cases, the per-share dollar amount of the fund is calculated by dividing the total value of all the securities in its portfolio, less any liabilities, by the number of fund shares outstanding.','http://www.investopedia.com/terms/n/nav.asp');
+        INSERT INTO user_search VALUES (search_id.NEXTVAL,'FACTOR','TEST DATA','A factor is a financial intermediary that purchases receivables from a company. A factor is essentially a funding source that agrees to pay the company the value of the invoice less a discount for commission and fees. The factor advances most of the invoiced amount to the company immediately and the balance upon receipt of funds from the invoiced party.','http://www.investopedia.com/terms/f/factor.asp');
+        INSERT INTO user_search VALUES (search_id.NEXTVAL,'SETTLEMENT DATE','TEST DATA','The settlement date is the date on which a trade must be settled and the buyer must make payment. It is also the payment date of benefits from a life insurance policy. The settlement date for stocks and bonds is usually three business days after the trade was executed; for government securities and options, its the next business day; and in spot foreign exchange it is two business days after the transaction date.','http://www.investopedia.com/terms/s/settlementdate.asp');
+        INSERT INTO user_search VALUES (search_id.NEXTVAL,'WAM','TEST DATA','Weighted average maturity (WAM) is the weighted average of the time until all maturities on mortgages in a mortgage-backed security (MBS). The higher the weighted average to maturity, the longer the mortgages in the security have until maturity. Also known as average effective maturity.','http://www.investopedia.com/terms/w/weightedaveragematurity.asp');
+        INSERT INTO user_search VALUES (search_id.NEXTVAL,'WAL','TEST DATA','Weighted average life (WAL) is the average number of years for which each dollar of unpaid principal on a loan or mortgage remains outstanding. Once calculated, WAL tells how many years it will take to pay half of the outstanding principal.','http://www.investopedia.com/terms/w/weightedaveragelife.asp');
+        INSERT INTO user_search VALUES (search_id.NEXTVAL,'ASSET','TEST DATA','An asset is a resource with economic value that an individual, corporation or country owns or controls with the expectation that it will provide future benefit.','http://www.investopedia.com/terms/a/asset.asp');
+        INSERT INTO user_search VALUES (search_id.NEXTVAL,'YIELD','TEST DATA','The income return on an investment. This refers to the interest or dividends received from a security and is usually expressed annually as a percentage based on the investments cost, its current market value or its face value.','http://www.investopedia.com/terms/y/yield.asp');
 
         /* Inserting data into user scheduler table */
         
         INSERT INTO user_scheduler VALUES (scheduler_id.NEXTVAL,'Your PC is going to shut down',sysdate);
-                
-        
-        
+
+      /* Table data population */
+      
+      SELECT * FROM user_Identification;
+      SELECT * FROM user_search;
+      SELECT * FROM user_scheduler;
