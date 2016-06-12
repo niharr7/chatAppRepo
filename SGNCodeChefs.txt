@@ -1,0 +1,75 @@
+/* Defining Schema */
+CREATE SCHEMA AUTHORIZATION system
+
+/* Creating table for Admin & User data */
+       CREATE TABLE user_Identification
+                  ( user_ID number(10) not null,
+                    user_name VARCHAR2(50) not null,
+                    user_password VARCHAR2(50) not null,
+                    user_role VARCHAR2(20),
+                    CONSTRAINT user_Identification1_pk PRIMARY KEY (user_name)
+                  );
+                  
+/* Creating table for Search data */
+       CREATE TABLE user_search
+                  ( search_ID number(10) not null,
+                    search_keyword VARCHAR2(50) not null,
+                    search_local_description CLOB,
+                    search_google_description CLOB,
+                    search_link CLOB,
+                    CONSTRAINT user_search_pk PRIMARY KEY (search_ID)
+                  );
+ /* Creating table for Scheduler */
+ CREATE TABLE user_scheduler
+                  ( scheduler_ID number(10) not null,
+                    scheduler_message VARCHAR2(50) not null,
+                    scheduler_time DATE,
+                    CONSTRAINT user_scheduler_pk PRIMARY KEY (scheduler_ID)
+                  );
+ 
+  /* Sequence creation for user id's */
+        CREATE SEQUENCE user_Identification 
+                 START WITH 100
+                 INCREMENT BY 1;
+ /* Sequence creation for search id's */
+        CREATE SEQUENCE user_search 
+                 START WITH 100
+                 INCREMENT BY 1;
+ /* Sequence creation for scheduler */
+        CREATE SEQUENCE scheduler_id 
+                 START WITH 100
+                 INCREMENT BY 1;
+            /*  DROP TABLE user_Identification; */
+              /*   DROP SEQUENCE user_Identification; */
+              /*  DROP TABLE user_search; */
+              /*   DROP SEQUENCE user_search; */
+              /*  DROP TABLE user_scheduler; */
+              /*   DROP SEQUENCE user_scheduler; */
+      /* Inserting data into user identification table */        
+        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Abhishek_admin','Admin@12345','ADMIN');
+        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Nihar_admin','Admin@12345','ADMIN');
+        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Dnyaneshwar_admin','Admin@12345','ADMIN');
+        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Rohan_admin','Admin@12345','ADMIN');
+        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Sagar_admin','Admin@12345','ADMIN');
+        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Abhishek_user','User@12345','User');
+        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Nihar_user','User@12345','USER');
+        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Dnyaneshwar_user','User@12345','USER');
+        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Rohan_user','User@12345','USER');
+        INSERT INTO user_Identification VALUES (user_Identification.NEXTVAL,'Sagar_user','User@12345','USER');        
+        
+        /* Inserting data into user search table */   
+        
+        INSERT INTO user_search VALUES (user_search.NEXTVAL,'NAV','TEST DATA','TEST DATA','https://www.google.co.in/');
+        INSERT INTO user_search VALUES (user_search.NEXTVAL,'FACTOR','TEST DATA','TEST DATA','https://www.google.co.in/');
+        INSERT INTO user_search VALUES (user_search.NEXTVAL,'SETTLEMENT DATE','TEST DATA','TEST DATA','https://www.google.co.in/');
+        INSERT INTO user_search VALUES (user_search.NEXTVAL,'WAM','TEST DATA','TEST DATA','https://www.google.co.in/');
+        INSERT INTO user_search VALUES (user_search.NEXTVAL,'WAL','TEST DATA','TEST DATA','https://www.google.co.in/');
+        INSERT INTO user_search VALUES (user_search.NEXTVAL,'ASSET','TEST DATA','TEST DATA','https://www.google.co.in/');
+        INSERT INTO user_search VALUES (user_search.NEXTVAL,'YIELD','TEST DATA','TEST DATA','https://www.google.co.in/');
+
+        /* Inserting data into user scheduler table */
+        
+        INSERT INTO user_scheduler VALUES (scheduler_id.NEXTVAL,'Your PC is going to shut down',sysdate);
+                
+        
+        
