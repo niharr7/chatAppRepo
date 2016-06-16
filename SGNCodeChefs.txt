@@ -14,9 +14,9 @@ CREATE SCHEMA AUTHORIZATION system
        CREATE TABLE user_search
                   ( search_ID number(10) not null,
                     search_keyword VARCHAR2(50) not null,
-                    search_local_description CLOB,
-                    search_google_description CLOB,
-                    search_link CLOB,
+                    search_local_description VARCHAR2(2000),
+                    search_google_description VARCHAR2(2000),
+                    search_link VARCHAR2(2000),
                     CONSTRAINT user_search_pk PRIMARY KEY (search_ID)
                   );
  /* Creating table for Scheduler */
