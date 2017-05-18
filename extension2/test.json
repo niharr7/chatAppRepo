@@ -1,0 +1,35 @@
+{
+  "rules": [
+    {
+      "id": "1",
+      "description": "password tags must have autocomplete on",
+      "entity": "input",
+      "condition_attrib": "type",
+      "condition_val": "password",
+      "attribute": "autocomplete",
+      "value": "on",
+      "rule": "1"
+    },
+    {
+      "id": "2",
+      "description": "Do not use eval in JS",
+      "entity": "script",
+      "condition_attrib": "",
+      "condition_val": "",
+      "attribute": "",
+      "value": "eval()",
+      "rule": "1"
+    },
+	 {
+      "id": "3",
+      "description": "Do not use innerHtml in JS",
+      "entity": "script",
+      "condition_attrib": "",
+      "condition_val": "",
+      "attribute": "",
+      "value": "evalmethod()",
+      "rule": "1"
+    }
+  ]
+}
+ 
