@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+
+  "update_url":"http://clients2.google.com/service/update2/crx",
+    "name": "Inspector",
+    "version": "1.0",
+    "description": "Make your web app FIS Standard's Compliant with our Inspector",
+
+  "browser_action": {
+
+  "default_icon": "icon.png"
+  },
+
+  "background":{
+
+  "scripts": ["background.js"],           
+  "persistent": false
+  
+
+},
+
+
+  "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "popup.js"
+       
+            ]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "cookies",
+        "http://*/*",
+        "https://*/*"
+    ]
+
+}

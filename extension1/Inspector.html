@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      
+   </head>
+   <body>
+      <div id="yslowDiv">
+    
+        <div id="toolbarDiv" style="display: block;">
+		
+         <div id="toolbar-ruleset" >
+           
+             <FORM METHOD="LINK" ACTION="index.html">
+			 <table style="width:100%">
+			 <tr>
+			 <td><h2>Inspect your web pages with Inspector</h2></td>
+			 <td style="text-align:right">
+			  Options
+              <select id="toolbar-rulesetList" name="rulesets" onchange="javascript:document.ysview.onChangeRuleset(event)">
+               <option value="vHeader">Headers</option>
+               <option value="vDOM">DOM</option>
+            </select>
+                  <INPUT TYPE="submit" VALUE="Modify">
+			 </td>
+			 </tr>
+			 </table>
+			 
+            </FORM>
+         </div>
+         </div>
+		  
+         <div id="viewDiv" class="yui-skin-sam" style="display: block;">
+		 
+            <div style="display: block;">
+			 
+               <div id="splashDiv">
+                  <div id="splashDivCenter">
+                    <img src="inspector.png" style="width:12%">	
+                     <div id="left">
+                       
+                        <div id="content" class="padding50">
+                           <h3>Inspector helps you to inspect:</h3>
+                           <ul id="splashBullets">
+                               
+                                 <li>Navigate through Headers</li>
+                                 <li>Navigate through DOM</li>
+                              
+                           </ul>
+                           <div id="runtestDiv"><button id="runtest-btn" onclick="javascript:document.ysview.runTest()">Run Test</button></div>
+						    <div id="copyrightDiv">Hope you enjoy the experience!!!</div>
+                        </div>
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+        
+      </div>
+
+
+
+      <script src="popup.js"></script>
+    
+      <!--
+         Copyright (c) 2012, Yahoo! Inc.  All rights reserved.
+         Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+         -->
+   </body>
+  
+</html>
